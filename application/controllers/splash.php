@@ -16,6 +16,8 @@ class Splash extends CI_Controller {
         $data = array(
             'title'   => 'My Blog Title',
             //'heading' => 'My Blog Heading',
+            'base_grant_url'=>$this->input->get('base_grant_url'),
+            'user_continue_url'=>$this->input->get('user_continue_url'),
             );
 
         if ($mac){
@@ -44,13 +46,14 @@ class Splash extends CI_Controller {
         );
         $views =array();
         $this->user->save($data);
-        $grant_url = $this->input->post('grant_url');
-        if($grant_url){
-             
+        $base_grant_url = $this->input->post('base_grant_url');
+        
+        if($base_grant_url){
+        $user_continue_url = $this->input->post('user_continue_url');     
 //            $views['_content']='meraki_welcome';
 //            
 //            $this->template->load('meraki_template', $views, $data);
-            redirect($grant_url);
+            redirect($base_grant_url.'?continue_url='.urlencode($user_continue_url).'&duration=120');
             
         }else{
             $this->session->set_flashdata('error', 'Not grant URL');
