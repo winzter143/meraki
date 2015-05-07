@@ -1,3 +1,4 @@
+<h1>Welcome</h1>
 <div>
     <form action='<?php echo site_url('splash/submit')?>' method='post'>
     <input type="hidden" name="grant_url" />

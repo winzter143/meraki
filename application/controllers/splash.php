@@ -47,11 +47,10 @@ class Splash extends CI_Controller {
         $grant_url = $this->input->post('grant_url');
         if($grant_url){
              
-            $views['_content']='meraki_welcome';
-            
-            $this->template->load('meraki_template', $views, $data);
-            
-            //redirect($grant_url);
+//            $views['_content']='meraki_welcome';
+//            
+//            $this->template->load('meraki_template', $views, $data);
+            redirect($grant_url);
             
         }else{
             $this->session->set_flashdata('error', 'Not grant URL');
