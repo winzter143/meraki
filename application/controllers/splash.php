@@ -14,6 +14,7 @@ class Splash extends CI_Controller {
         $mac = $this->input->get('mac');
         $user = '';
         $data = array(
+            'mac'=>$mac,
             'title'   => 'My Blog Title',
             //'heading' => 'My Blog Heading',
             'base_grant_url'=>$this->input->get('base_grant_url'),
