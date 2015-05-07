@@ -11,7 +11,7 @@ class Splash extends CI_Controller {
 	public function index()
 	{
         // I expect there always MAC parameter or else not valid request
-        $mac = $this->input->get('mac');
+        $mac = $this->input->get('client_mac');
         $user = '';
         $data = array(
             'mac'=>$mac,
